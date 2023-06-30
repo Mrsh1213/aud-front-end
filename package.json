@@ -6,6 +6,7 @@
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "@mui/material": "^5.13.6",
+    "@tanstack/react-query": "^4.29.19",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.14.0",
@@ -14,21 +15,23 @@
     "stylis-plugin-rtl": "^2.0.2"
   },
   "scripts": {
-    "start:dev": "react-scripts start",
-    "start:test": "set REACT_APP_ENV=test && react-scripts start",
-    "start:prod": "set REACT_APP_ENV=production && react-scripts start",
+    "start:dev": "env-cmd -f .env.development react-scripts start",
+    "start:test": "env-cmd -f .env.test react-scripts start",
+    "start:prod": "env-cmd -f .env.production react-scripts start",
+    "start:prod-local": "env-cmd -f .env.production.local react-scripts start",
     "start:prodlocal": "set REACT_APP_ENV=production react-scripts start",
-    "build:dev": "REACT_APP_ENV=development react-scripts --max_old_space_size=4096 build",
-    "build:prod": "REACT_APP_ENV=production npm run --max_old_space_size=4096 build",
-    "build:prodlocal": "REACT_APP_ENV=production.local npm run --max_old_space_size=4096 build",
-    "build:test": "REACT_APP_ENV=test npm run --max_old_space_size=4096 build",
+    "build:dev": "env-cmd -f .env.development react-scripts --max_old_space_size=4096 build",
+    "build:prod": "env-cmd -f .env.production npm run --max_old_space_size=4096 build",
+    "build:prodlocal": "env-cmd -f .env.production.local npm run --max_old_space_size=4096 build",
+    "build:test": "env-cmd -f .env.test npm run --max_old_space_size=4096 build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
       "react-app",
-      "react-app/jest"
+      "react-app/jest",
+      "plugin:@tanstack/eslint-plugin-query/recommended"
     ]
   },
   "browserslist": {
@@ -42,5 +45,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@tanstack/eslint-plugin-query": "^4.29.9",
+    "env-cmd": "^10.1.0"
   }
 }
