@@ -1,0 +1,46 @@
+{
+  "name": "aud-front-end",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/material": "^5.13.6",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.14.0",
+    "react-scripts": "5.0.1",
+    "stylis": "^4.2.0",
+    "stylis-plugin-rtl": "^2.0.2"
+  },
+  "scripts": {
+    "start:dev": "react-scripts start",
+    "start:test": "set REACT_APP_ENV=test && react-scripts start",
+    "start:prod": "set REACT_APP_ENV=production && react-scripts start",
+    "start:prodlocal": "set REACT_APP_ENV=production react-scripts start",
+    "build:dev": "REACT_APP_ENV=development react-scripts --max_old_space_size=4096 build",
+    "build:prod": "REACT_APP_ENV=production npm run --max_old_space_size=4096 build",
+    "build:prodlocal": "REACT_APP_ENV=production.local npm run --max_old_space_size=4096 build",
+    "build:test": "REACT_APP_ENV=test npm run --max_old_space_size=4096 build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
